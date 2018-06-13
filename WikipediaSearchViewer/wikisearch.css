@@ -1,0 +1,156 @@
+/* https://coolors.co/999999-ffab40-333333-212523-e6e6e6 */
+
+html {
+  min-height: 100%;
+  min-width: 280px;
+  position: relative;
+}
+
+body {
+  background-color: #212523;
+  color: #E6E6E6;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  margin-bottom: 12em;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* top margin before searching */
+
+.main-default-view {
+  margin-top: 20vh;
+}
+
+
+/* top margin after searching */
+
+.main-results-view {
+  margin-top: 1em;
+}
+
+.material-icons {
+  cursor: pointer;
+}
+
+.material-icons:active {
+  color: #E6E6E6;
+}
+
+.spinner {
+  margin-top: 7em;
+}
+
+.random-link a {
+  color: #E6E6E6;
+  text-indent: 1.4em;
+}
+
+.reset {
+  margin-left: .35em;
+}
+
+.search {
+  font-size: 8em;
+}
+
+#search-field {
+  font-size: 16px;
+  text-indent: .5em;
+}
+
+#search-field:focus {
+  border-bottom: 1px solid #FFF;
+  box-shadow: 0 1px 0 0 #FFF;
+  color: #FFF;
+}
+
+#search-field + label {
+  text-indent: .25em;
+  white-space: nowrap;
+}
+
+#search-field:focus + label {
+  color: #E6E6E6;
+}
+
+.input-field .prefix.active {
+  color: #E6E6E6;
+}
+
+.card {
+  color: #212523;
+}
+
+.card-title {
+  background-color: #212523;
+  background-color: rgba(0, 0, 0, .3);
+}
+
+
+/* class used in Wikipedia HTML extracts */
+
+.searchmatch {
+  font-weight: bold;
+}
+
+.top-link {
+  margin-top: 3em;
+}
+
+.top-link i {
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+
+/* footer formatting */
+
+.footer {
+  background-color: #212523;
+  border-top: 2px solid #333;
+  bottom: 0;
+  color: #999;
+  font-size: .8em;
+  max-height: 12em;
+  position: absolute;
+  width: 100%;
+}
+
+.footer a {
+  color: #FFAB40;
+}
+
+.footer-text {
+  margin-bottom: 0;
+}
+
+.footer-logos {
+  font-size: 1.2em;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.footer-logos i:hover {
+  color: #999;
+}
+
+.footer-logos i {
+  border: 1px solid #333;
+  border-radius: 25%;
+  color: #999;
+  margin: 0 .25em 0 .25em;
+  padding: .45em;
+}
+
+.footer .container {
+  max-width: 480px;
+  min-width: 180px;
+}
