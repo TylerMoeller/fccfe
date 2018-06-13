@@ -1,0 +1,154 @@
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  background-attachment: fixed;
+  background-color: #222;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  font-family: 'Cabin', sans-serif;
+  margin-bottom: 10em;
+  min-height: 100%;
+  min-width: 320px;
+  text-align: center;
+}
+
+#city {
+  font-size: 2em;
+  text-shadow: 2px 4px 1px #333;
+}
+
+@media screen and (min-width: 768px) {
+  #city {
+    margin-top: 20%;
+  }
+}
+#temperature {
+  font-size: 3em;
+  text-shadow: 2px 4px 2px #333;
+}
+
+#condition,
+#wind-speed {
+  background-color: #93AFC4;
+  background-color: rgba(147, 175, 196, .4);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: .2em .2em .2em #222;
+  display: inline-block;
+  font-size: 1.2em;
+  margin: .5em;
+  min-height: 6em;
+  min-width: 10em;
+  padding-top: 1em;
+  text-shadow: 1px 1px 1px #333333;
+}
+
+.wi {
+  font-size: 2em;
+}
+
+.description {
+  line-height: 3em;
+}
+
+.input-group {
+  color: #222;
+  margin: 2em auto 0 auto;
+  max-width: 25em;
+  padding: 0 1em;
+}
+
+#search-field {
+  font-size: 16px;
+}
+
+/* auto-complete menu */
+.ui-menu {
+  background-color: white;
+  list-style: none;
+  margin: 0;
+  max-width: 20em;
+  outline: none;
+  padding: 0;
+  text-align: left;
+}
+
+.ui-menu .ui-menu-item {
+  color: #222;
+  border-bottom: 2px solid #428bca;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0;
+  overflow: hidden;
+  padding: 3px 1em 3px .4em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ui-state-focus,
+.ui-state-active {
+  background-color: #ddd;
+  margin: -1px;
+}
+
+.ui-helper-hidden-accessible {
+  clip: rect(1px,1px,1px,1px);
+  position: absolute;
+}
+
+/* footer formatting */
+.footer {
+  background-color: #222;
+  border-top: 3px outset #444;
+  bottom: 0;
+  font-size: 12px;
+  font-weight: normal;
+  min-width: 320px;
+  padding: 1em 1em 0 1em;
+  position: absolute;
+  width: 100%;
+}
+
+.footer-logos {
+  font-size: 14px;
+  margin-top: -.5em;
+}
+
+.footer-logos a {
+  text-decoration: none;
+}
+
+.footer-logos i {
+  border: 1px solid #646464;
+  border: 1px solid rgba(100, 100, 100, .3);
+  border-radius: 25%;
+  color: #777777;
+  margin: 0 0 1em 1em;
+  padding-top: .25em;
+  text-align: center;
+  vertical-align: -1.5em;
+}
+
+.footer-logos .genericon {
+  height: 1.6em;
+  width: 1.6em;
+}
+
+.footer-logos .fa {
+  height: 1.75em;
+  width: 1.75em;
+}
+
+.attribution-logo {
+  vertical-align: text-bottom;
+  width: 90px;
+}
+
+.footer .container-fluid {
+  max-width: 768px;
+}

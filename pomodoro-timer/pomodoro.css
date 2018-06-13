@@ -1,0 +1,125 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Disable text selection so buttons aren't highlighted when rapidly clicked */
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: #222222;
+  margin-bottom: 120px;
+}
+
+.container {
+  min-width: 320px;
+  max-width: 520px;
+}
+
+@media (min-width:768px) {
+  .timer {
+    margin-top: 10%;
+  }
+}
+
+.timer p {
+  color: white;
+  margin: 0;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.title {
+  font-size: 3.5em;
+  color: white;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.progress {
+  width: 50%;
+}
+
+.progress-bar {
+  text-align: left;
+  color: black;
+  font-weight: bold;
+}
+
+.clock-time {
+  font-family: 'Nova Square', sans-serif;
+  font-size: 5em;
+  color: white;
+}
+
+.play-reset-row {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+#sessionCount {
+  color: white;
+  font-size: 2em;
+}
+
+.time-adjustment-row {
+  white-space: nowrap;
+}
+
+.task-time-display,
+.break-time-display {
+  font-size: 2em;
+  color: white;
+  font-family: 'Nova Square', sans-serif;
+}
+
+.settings p {
+  text-align: left;
+  margin: 4em 0 0 0;
+}
+
+.checkbox p {
+  text-align: left;
+  margin: 0 0 .5em 0;
+}
+/* Show link pointer so users know icons are clickable */
+
+.icon {
+  cursor: pointer;
+}
+
+.icon:active {
+  transform: scale(0.9);
+}
+
+/* footer formatting */
+.footer {
+  background-color: #222222;
+  position: absolute;
+  border-top: 1px solid black;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-text {
+  font-size: 12px;
+  margin-top: 1em;
+}
+
+.footer-logos {
+  font-size: 1.2em;
+  margin-bottom: .5em;
+}
+
+.footer-logos a {
+  text-decoration: none;
+}
+
+.footer-logos i {
+  color: #777777;
+  border: 1px solid rgba(100, 100, 100, .3);
+  border-radius: 25%;
+  vertical-align: text-bottom;
+  padding: .25em;
+  margin-right: .5em;
+}

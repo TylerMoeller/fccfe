@@ -1,0 +1,324 @@
+@font-face {
+  font-family: 'alarm-clock';
+  font-style: normal;
+  font-weight: normal;
+	src: url('https://tylermoeller.github.io/js-calculator/assets/font/alarm-clock.ttf.woff') format('woff'),
+    url('https://tylermoeller.github.io/js-calculator/assets/font/alarm-clock.ttf.svg#alarm-clock') format('svg'),
+    url('https://tylermoeller.github.io/js-calculator/assets/font/alarm-clock.ttf.eot'),
+    url('https://tylermoeller.github.io/js-calculator/assets/font/alarm-clock.ttf.eot?#iefix') format('embedded-opentype');
+}
+
+html {
+	min-height: 100%;
+	position: relative;
+}
+
+body {
+	background-color: #222222;
+  background-image: url('https://tylermoeller.github.io/simonsays/img/bamboo.jpg');
+	font-size: 16px;
+	overflow: hidden;
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.ui-page-active:focus {
+  outline: none;
+}
+
+@media (min-width:768px) {
+	.main {
+		margin-top: 10em;
+	}
+}
+.main {
+	margin-bottom: .5em;
+}
+
+.disabled {
+	pointer-events: none;
+}
+
+.gameboard {
+	background-color: #222222;
+	border: 1.6rem solid #222222;
+	border-radius: 100%;
+	left: 0;
+	margin: .25em auto;
+	max-width: 550px;
+	min-width: 300px;
+	text-align: center;
+	top: 0;
+	-moz-transform: scale(1, .88);
+	-ms-transform: scale(1, .88);
+	-o-transform: scale(1, .88);
+	-webkit-transform: scale(1, .88);
+	transform: scale(1, .88);
+	width: 100%;
+}
+
+.bottom {
+	margin-top: -1rem;
+}
+
+.color-button {
+	border: .8rem solid #333333;
+	display: inline-block;
+	margin: 2% auto 0 auto;
+	padding: 0 0 49% 0;
+	width: 49%;
+}
+
+.active {
+	opacity: 1!important;
+}
+
+#blue {
+	background-color: blue;
+	border-bottom-right-radius: 100%;
+	opacity: .6;
+}
+
+#yellow {
+	background-color: yellow;
+	border-bottom-left-radius: 100%;
+	opacity: .6;
+}
+
+#green {
+	background-color: green;
+	border-top-left-radius: 100%;
+	opacity: .6;
+}
+
+#red {
+	background-color: red;
+	border-top-right-radius: 100%;
+	opacity: .6;
+}
+
+.center {
+	background-color: #e5e5e5;
+	border: .8rem solid #222222;
+	border-radius: 100%;
+	height: 49%;
+	left: 25%;
+	position: absolute;
+	top: 25%;
+	width: 49%;
+}
+
+.title {
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 2.4em;
+	font-weight: bold;
+	margin-top: 7%;
+}
+
+.trademark {
+	font-size: .5em;
+	font-weight: normal;
+}
+
+.center-controls {
+	margin-top: 7%;
+}
+
+.center-controls div {
+	display: inline-block;
+}
+
+.color-button:active {
+	transform: scale(1.02);
+}
+
+.score {
+	background-color: black;
+	border: 4px solid #222222;
+	border-radius: 15%;
+	color: red;
+	cursor: default;
+	font-family: 'alarm-clock', sans-serif;
+	font-size: 1.5em;
+	height: 2em;
+	margin-top: .5em;
+	position: relative;
+	text-align: center;
+	top: 7px;
+	width: 2em;
+}
+
+.btn-control {
+	width: 20%;
+}
+
+.btn-game {
+	background-color: yellow;
+	border: 4px solid #000000;
+	border-radius: 100%;
+	box-shadow: 0 0 .4em #222222;
+	cursor: pointer;
+	height: 1.6em;
+	width: 1.5em;
+}
+
+.btn-game:active {
+	background-color: red;
+	transform: scale(0.9);
+}
+
+.control-label {
+	cursor: default;
+	display: inline-block;
+	font-size: 0.8em;
+	margin-top: .5em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.power-toggle-box {
+	background-color: #222222;
+	border-radius: 5%;
+	cursor: pointer;
+	display: inline-block;
+	height: 1.25em;
+	vertical-align: text-top;
+	width: 2.5em;
+}
+
+.power-toggle {
+	background-color: blue;
+	border: 1px solid #222222;
+	display: inline-block;
+	height: 1em;
+	margin: 0 2px;
+	vertical-align: text-top;
+	width: 1em;
+}
+
+.power-toggle-box:active {
+	transform: scale(1.03);
+}
+
+.warning {
+	display: none;
+}
+
+/* Mobile View */
+@media screen and (max-width: 500px) {
+	.warning {
+		display: inline;
+		font-weight: bold;
+		position: relative;
+		top: 1.5em;
+	}
+
+	.gameboard {
+		width: 300px;
+	}
+
+	.gameboard,
+	.power {
+		margin: 8.6em auto 0 auto;
+	}
+
+	.score {
+		margin: .25em .25em .25em 0;
+		width: 90%;
+	}
+
+	.title {
+		font-size: 2em;
+		padding-top: 1.1em;
+	}
+
+	.mobile-wrapper {
+		background-color: #ffffff;
+		background-color: rgba(255, 255, 255, .1);
+		border: 1px solid #222222;
+		border-radius: 1em;
+		height: 8em;
+		left: 10px;
+		margin: 0 auto;
+		position: fixed;
+		top: -190px;
+		width: 15em;
+		z-index: 1;
+	}
+
+	.center-controls {
+		margin: 0;
+	}
+
+	.btn-control,
+	.control-label {
+		margin: 0 .25em;
+		text-align: right;
+	}
+
+	.btn-game {
+		margin-right: .75em;
+	}
+
+	.power {
+		position: relative;
+		top: -8.5em;
+	}
+}
+
+
+/* footer formatting */
+
+.footer {
+	background-color: #222222;
+	border-top: 1px solid black;
+	bottom: 0;
+	font-family: arial;
+	font-size: 12px;
+	font-weight: 300;
+	min-width: 300px;
+	padding: 1em 1em 0 1em;
+	position: fixed;
+	width: 100%;
+}
+
+.footer-logos {
+	font-size: 14px;
+	margin-top: -1em;
+}
+
+.footer-logos a {
+	text-decoration: none;
+}
+
+.footer-logos i {
+	border: 1px solid #646464;
+	border: 1px solid rgba(100, 100, 100, .3);
+	border-radius: 25%;
+	color: #777777;
+	margin: 0 0 1em 1em;
+	padding-top: .25em;
+	text-align: center;
+	vertical-align: -1.5em;
+}
+
+.footer-logos .genericon {
+	height: 1.6em;
+	width: 1.6em;
+}
+
+.footer-logos .fa {
+	height: 1.75em;
+	width: 1.75em;
+}
+
+.footer .container-fluid {
+	max-width: 480px;
+}
+
+/* jQuery Mobile */
+.ui-loader {
+	display: none;
+}

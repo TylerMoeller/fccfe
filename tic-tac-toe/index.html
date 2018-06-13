@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="google" value="notranslate">
+    <title>Tic Tac Toe - by Tyler Moeller</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet prefetch" href="https://tylermoeller.github.io/tic-tac-toe/css/bootstrap.min.css">
+    <link rel="stylesheet prefetch" href="https://tylermoeller.github.io/tic-tac-toe/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://tylermoeller.github.io/tic-tac-toe/css/tic-tac-toe.css">
+    <!--
+          ****       ***         ***       ***         ***        ****
+          *  Copyright (C) 2016 Tyler Moeller. All rights reserved.  *
+          *  All trademarks, product names, and logos on this site   *
+          *  are the property of their respective owners.            *
+          ****       ***         ***       ***         ***        ****
+
+        Assignment Details:
+          - Developed for the freeCodeCamp advanced front-end development project: Build a Tic Tac Toe Game
+          - Details: http://www.freecodecamp.com/challenges/build-a-tic-tac-toe-game
+
+        Requirements for this assignment:
+          - Objective: Build a CodePen.io app that is functionally similar to this: http://codepen.io/FreeCodeCamp/full/adBpvw.
+          - Rule #1: Don't look at the example project's code. Figure it out for yourself.
+          - Rule #2: Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
+          - User Story: I can play a game of Tic Tac Toe with the computer.
+          - User Story: My game will reset when it's over so I can play again.
+          - User Story: I can choose whether I want to play as X or O.
+
+        Assignment Completed. v1.0 03/12/2016:
+          - Responsive deisgn using JavaScript, jQuery, HTML5, and Bootstrap + Font Awesome CSS libraries.
+          - All required user stories fulfilled.
+          - Users can also choose who goes first.
+
+        To Do:
+          - Incorporate minimax algorithm
+    -->
+  </head>
+  <body>
+    <div class="main">
+      <div class="container text-center">
+        <div class="row">
+          <h1 class="title">Tic Tac Toe</h1>
+        </div>
+      </div>
+      <div class="gameboard container text-center">
+        <div class="row-1">
+          <div class="square column-a cell-a1">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell">
+                  <p id="a1" class="game-tile">&nbsp;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="square column-b cell-b1">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell">
+                  <p id="b1" class="game-tile">&nbsp;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="square column-c cell-c1">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell">
+                  <p id="c1" class="game-tile">&nbsp;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="square column-a cell-a2">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell">
+                  <p id="a2" class="game-tile">&nbsp;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="square column-b cell-b2">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell">
+                  <p id="b2" class="game-tile">&nbsp;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="square row-b column-c cell-c2">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell">
+                  <p id="c2" class="game-tile">&nbsp;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row-3">
+          <div class="square column-a cell-a3">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell">
+                  <p id="a3" class="game-tile">&nbsp;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="square column-b cell-b3">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell">
+                  <p id="b3" class="game-tile">&nbsp;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="square column-c cell-c3">
+            <div class="content">
+              <div class="table">
+                <div class="table-cell">
+                  <p id="c3" class="game-tile">&nbsp;</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="options text-center">
+          <h2 class="welcome-text">Welcome!<br> Choose your options!</h2>
+          <div class="row letter-options">
+            <div class="col-xs-4 col-xs-offset-1 text-right letter-choice">Your Letter:<br><br></div>
+            <div class="radio-buttons text-left">
+              <input type="radio" id="x">&nbsp;&nbsp;X
+              <br/>
+              <input type="radio" id="o">&nbsp;&nbsp;O
+            </div>
+          </div>
+          <div class="row user-options">
+            <div class="col-xs-4 col-xs-offset-1 text-right user-choice">First Move:<br><br></div>
+            <div class="radio-buttons text-left">
+              <input type="radio" id="you">&nbsp;&nbsp;You
+              <br>
+              <input type="radio" id="computer">&nbsp;&nbsp;Computer
+            </div>
+          </div>
+          <div class="row">
+            <br>
+            <input type="button" class="btn btn-primary btn-md start-btn" value="Start Playing!">
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="container-fluid text-center">
+          <div class="footer-text text-muted row">Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script> Tyler Moeller. All rights reserved. Developed for the freeCodeCamp Front-end Development Challenge: <a href="https://www.freecodecamp.com/challenges/build-a-tic-tac-toe-game" target="_blank">Build a Tic Tac Toe Game</a>.</div>
+          <div class="footer-logos row">
+            <a href="https://twitter.com/Tyler_Moeller" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/tylermoeller" target="_blank"><i class="fa fa-linkedin"></i></a>
+            <a href="https://github.com/TylerMoeller" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="https://freecodecamp.com/tylermoeller" target="_blank"><i class="fa fa-fire"></i></a>
+            <a href="https://codepen.io/TylerMoeller/pens/public" target="_blank"><i class="fa fa-codepen"></i></a>
+            <a href="http://tylermoeller.net" target="_blank"><i class="fa fa-wordpress"></i></a>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Modal Dialog for end of game -->
+    <div class="modal fade" id="winModal" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <p class="winner-text"></p>
+            <div id="refresh" class="refresh text-center">
+              <span class="fa-stack fa-lg">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-refresh fa-stack-1x" data-dismiss="modal"></i>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://tylermoeller.github.io/tic-tac-toe/js/jquery.min.js"></script>
+    <script src="https://tylermoeller.github.io/tic-tac-toe/js/bootstrap.min.js"></script>
+    <script src="https://tylermoeller.github.io/tic-tac-toe/js/tic-tac-toe.js"></script>
+  </body>
+</html>

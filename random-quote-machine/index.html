@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="google" value="notranslate">
+    <title>Random Quote Machine by Tyler Moeller</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet prefetch" href="//tylermoeller.github.io/random-quote-machine/css/materialize.min.css">
+    <link rel="stylesheet prefetch" href="//tylermoeller.github.io/random-quote-machine/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="//tylermoeller.github.io/random-quote-machine/css/random-quote-machine.css">
+  </head>
+  <body>
+    <!--
+      ****       ***         ***       ***         ***        ****
+      *  Copyright (C) 2016 Tyler Moeller. All rights reserved.  *
+      *  All trademarks, product names, and logos on this site   *
+      *  are the property of their respective owners.            *
+      ****       ***         ***       ***         ***        ****
+
+    Assignment Details:
+      - Developed for the freeCodeCamp zipline project: Zipline: Build a Random Quote Machine
+      - Details: http://freecodecamp.com/challenges/zipline-build-a-random-quote-machine
+
+    Requirements for this assignment:
+      - Build a random quote machine that emulates this: http://codepen.io/AdventureBear/full/vEoVMw.
+      - Don't look at the source code of the project you are emulating
+      - Users are able to click a button to get a new random quote
+      - Bonus: Users are able to click a button to tweet the quote
+
+    Assignment Completed. v1.0 9/24/2015:
+      - Responsive deisgn using JavaScript, jQuery, HTML5, with Materialize + FontAwesome CSS libraries.
+      - Random quote given on page load
+      - Button to get a new random quote in the navbar and main page
+      - Button to tweet quote with transition effects and tooltips to help show it's a button
+          - twitter js widget to present modal dialog instead of separate tab/page in browser
+          - Quotes are filtered so they can all fit whithin 140-char tweet limit
+          - Classes, ids, and icons named carefully to prevent adblock issues
+      - Button to view author on Wikipedia with transition effects and tooltips to help show it's a button
+    -->
+    <main>
+      <div class="container center">
+        <div class="row">
+          <h3 class="title">Random Quote Machine</h3>
+        </div>
+        <div class="row main-content center">
+          <div class="col s4 offset-s4">
+            <div class="preloader-wrapper big active spinner" id="spinner">
+              <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div>
+                <div class="gap-patch">
+                  <div class="circle"></div>
+                </div>
+                <div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s8 offset-s2">
+            <div id="quote-text" class="flow-text">
+              <p id="quote"></p>
+              <p><i id="author"></i></p>
+            </div>
+            <div id="quote-actions" class="row">
+              <div class="tooltipped col s3 offset-s3" data-position="bottom" data-tooltip="View the author on Wikipedia!">
+                <a id="wikiLink" target="_blank" rel="noopener noreferrer">
+                  <img class="authorWiki" src="https://tylermoeller.github.io/random-quote-machine/img/logo-wiki.png">
+                </a>
+              </div>
+              <div class="tooltipped col s3" data-position="bottom" data-tooltip="Tweet this quote!">
+                <a id="tweetLink" target="_blank" rel="noopener noreferrer">
+                  <img class="shareQuote" src="https://tylermoeller.github.io/random-quote-machine/img/logo-twit.png">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="new-quote-btn btn blue-grey lighten-5 black-text" onclick="getQuote()">Generate another quote!</a>
+      </div>
+    </main>
+    <footer class="page-footer grey darken-4">
+      <div class="container center">
+        <div class="row grey-text">
+          <p class="footer-text">Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            Tyler Moeller. All rights reserved. Quotes retrieved from
+            <a href="http://forismatic.com/en/api/" target="_blank" rel="noopener noreferrer">Forismatic</a>.
+            Developed for the freeCodeCamp Front-end Development Challenge:
+            <a href="http://www.freecodecamp.com/challenges/build-a-random-quote-machine" target="_blank" rel="noopener noreferrer">
+              Build a Random Quote Machine</a>.
+          </p>
+        </div>
+        <div class="footer-logos row">
+          <a href="https://twitter.com/Tyler_Moeller" target="_blank" rel="noopener noreferrer"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/tylermoeller" target="_blank" rel="noopener noreferrer"><i class="fa fa-linkedin"></i></a>
+          <a href="https://github.com/TylerMoeller" target="_blank" rel="noopener noreferrer"><i class="fa fa-github"></i></a>
+          <a href="https://www.freecodecamp.org/tylermoeller" target="_blank" rel="noopener noreferrer"><i class="fa fa-fire"></i></a>
+          <a href="https://codepen.io/TylerMoeller" target="_blank" rel="noopener noreferrer"><i class="fa fa-codepen"></i></a>
+          <a href="http://tylermoeller.net" target="_blank" rel="noopener noreferrer"><i class="fa fa-wordpress"></i></a>
+        </div>
+      </div>
+    </footer>
+    <script src="//tylermoeller.github.io/random-quote-machine/js/jquery-2.2.1.min.js"></script>
+    <script src="//tylermoeller.github.io/random-quote-machine/js/materialize.min.js"></script>
+    <script src="//tylermoeller.github.io/random-quote-machine/js/random-quote-machine.js"></script>
+    <script src="//tylermoeller.github.io/random-quote-machine/js/widgets.js"></script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="google" value="notranslate">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta name="description" content="A Wikipedia Search Viewer by Tyler Moeller, using the Wikimedia API.">
+    <meta name="url" content="https://tylermoeller.github.io/local-weather-app/">
+    <meta name="rating" content="General">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Local Weather App - by Tyler Moeller</title>
+    <base href="https://tylermoeller.github.io/local-weather-app/index.htm">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" type="text/css" rel="stylesheet prefetch">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css" type="text/css" rel="stylesheet prefetch">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons-wind.min.css" type="text/css" rel="stylesheet prefetch">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet prefetch">
+    <link href="weather-app.css" rel="stylesheet prefetch">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div id="city"></div>
+        <div id="temperature"></div>
+      </div>
+      <div id="results row">
+        <div id="condition"></div>
+        <div id="wind-speed"></div>
+      </div>
+      <div class="row">
+        <a id="convert-button" class="btn btn-primary">°F / °C</a>
+      </div>
+      <div class="row">
+        <div class="input-group">
+          <input id="search-field" type="text" class="form-control" placeholder="Search for a city...">
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container-fluid text-center">
+        <div class="footer-text text-muted row">Copyright &copy;
+          <script>document.write(new Date().getFullYear());</script>
+          Tyler Moeller. All rights reserved. Developed for the freeCodeCamp Challenge:
+          <a href="https://www.freecodecamp.com/challenges/show-the-local-weather" target="_blank">Show the Local Weather</a>.
+          <br>Data retrieved from
+          <span>
+            <a href="https://www.wunderground.com/weather/api/d/docs" target="_blank" alt="Weather Underground Logo">
+              <img class="attribution-logo" src="https://icons.wxug.com/logos/PNG/wundergroundLogo_4c_rev_horz.png">
+            </a>
+          </span>
+        </div>
+        <div class="footer-logos row">
+          <a href="https://twitter.com/Tyler_Moeller" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/tylermoeller" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a href="https://github.com/TylerMoeller" target="_blank"><i class="fa fa-github"></i></a>
+          <a href="https://freecodecamp.com/tylermoeller" target="_blank"><i class="fa fa-fire"></i></a>
+          <a href="https://codepen.io/TylerMoeller/pens/public" target="_blank"><i class="fa fa-codepen"></i></a>
+          <a href="http://tylermoeller.net" target="_blank"><i class="fa fa-wordpress"></i></a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="weather-app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="google" value="notranslate">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Markdown Previewer, built with React">
+    <meta name="url" content="https://github.com/TylerMoeller/React-Markdown-Previewer/">
+    <meta name="rating" content="General">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>React Markdown Previewer - By Tyler Moeller</title>
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/tomorrow-night-bright.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/style.css" rel="stylesheet">
+
+    <!--
+      ****       ***         ***       ***         ***        ****
+      *  Copyright (C) 2016 Tyler Moeller. All rights reserved.  *
+      *  All trademarks, product names, and logos on this site   *
+      *  are the property of their respective owners.            *
+      ****       ***         ***       ***         ***        ****
+
+    Assignment Details:
+      - Developed for the freeCodeCamp React Project: Build a Markdown Previewer
+      - Details: https://www.freecodecamp.com/challenges/build-a-markdown-previewer
+
+    Requirements for this assignment:
+      - Objective: Build a CodePen.io app that is functionally similar to this: http://codepen.io/FreeCodeCamp/full/obYYqW.
+      - Rule #1: Don't look at the example project's code. Figure it out for yourself.
+      - Rule #2: Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
+      - Rule #3: You must use both Sass and React to build this project.
+      - User Story: I can type GitHub-flavored Markdown into a text area.
+      - User Story: I can see a preview of the output of my markdown that is updated as I type.
+      - Hint: You don't need to interpret Markdown yourself - you can import the Marked library for this: https://cdnjs.com/libraries/marked
+
+    Assignment Completed. v1.0 03/28/2016:
+      - Responsive design using HTML5, Font-Awesome, Sass, and React with JSX syntax
+      - All required user stories fulfilled.
+      - Added highlight.js support for nicer code-block styling
+
+    To Do:
+      - emoji support
+     -->
+  </head>
+  <body>
+    <div id="content"></div>
+    <div id="textbox"></div>
+    <div id="previewer"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/highlight.min.js"></script>
+    <script src="lib/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScript Calculator by Tyler Moeller</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/genericons/3.4.1/genericons/genericons.css">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Roboto:700);
+      @font-face {
+        font-family: 'alarm-clock';
+        src: url('https://tylermoeller.github.io/js-calculator/assets/font/alarm-clock.ttf.woff') format('woff'),
+          url('https://tylermoeller.github.io/js-calculator/assets/font/alarm-clock.ttf.svg#alarm-clock') format('svg'),
+          url('https://tylermoeller.github.io/js-calculator/assets/font/alarm-clock.ttf.eot'),
+          url('https://tylermoeller.github.io/js-calculator/assets/font/alarm-clock.ttf.eot?#iefix') format('embedded-opentype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      html {
+        position: relative;
+        min-width: 320px;
+        min-height: 100%;
+      }
+
+      body {
+        font-size: 14px;
+        -webkit-user-select: none!important;
+        -moz-user-select: -moz-none!important;
+        -ms-user-select: none!important;
+        user-select: none!important;
+        background-color: #222222;
+        /* buffer for footer */
+        margin-bottom: 155px;
+        color:black;
+      }
+
+      .ui-page {
+        min-height: 100%!important;
+        outline: none;
+      }
+
+      .ui-loader {
+        display:none;
+      }
+
+      .headroom {
+        margin-top: 10%;
+      }
+
+      .brand {
+        font-weight: 600;
+        font-size: 1.2em;
+        margin-bottom: 0;
+      }
+
+      .model {
+        margin-bottom: 1em;
+      }
+
+      .calculator {
+        padding: 1.5em 0 1.5em 0;
+        width: 310px;
+        background: url('https://tylermoeller.github.io/js-calculator/assets/img/bamboo.jpg');
+        background-color: darkgrey;
+        border-radius: 40px;
+        border: 3px outset #eeeeee;
+        box-shadow: 0px 15px 20px rgba(0, 0, 0, .5);
+      }
+
+      input:disabled {
+        opacity: 1;
+        font-family: 'alarm-clock', monospace;
+        margin: 0 0 .5em 0;
+        padding: .25em .1em 0 0;
+        width: 275px;
+        border-radius: 10px;
+        font-size: 2.7em;
+        text-align: right;
+        background-color: darkgrey;
+        color: rgba(34, 34, 34, 1);
+        height: 1.7em;
+      }
+
+      #battery {
+        left: -120px;
+      }
+
+      .aluminum {
+        font-size: 1.7em;
+        margin: .1em;
+        outline: none;
+        text-align: center;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+      }
+
+      .aluminum:active {
+        color: rgba(0, 102, 204, 1);
+        box-shadow: 1px 1px 10px rgba(0, 102, 204, 1);
+      }
+
+      .round {
+        font-family: roboto, monospace;
+        border-radius: 50%;
+        background-image: -webkit-repeating-radial-gradient(50% 50%, 100% 100%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 3%, rgba(0, 0, 0, .1) 3.5%),
+          -webkit-radial-gradient(50% 50%, 200% 50%, rgba(230, 230, 230, 1) 5%, rgba(217, 217, 217, 1) 30%, rgba(153, 153, 153, 1) 100%);
+      }
+
+      .square {
+        font-family: roboto, monospace;
+        border-radius: 25%;
+        background-image: -webkit-repeating-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 1.2%, rgba(255, 255, 255, .15) 2.2%),
+          linear-gradient(0deg, lightgrey 0%, lightgrey 0%, lightgrey 53%, darkgrey 100%);
+      }
+
+      /* footer formatting */
+      .footer {
+        background-color: #222222;
+        font-size: 12px;
+        position: absolute;
+        border-top: 1px solid black;
+        bottom: 0;
+        width: 100%;
+        padding: 1em 1em 0 1em;
+      }
+
+      .footer-logos {
+        margin-top: -1em;
+        font-size: 14px;
+      }
+
+      .footer-logos a {
+        text-decoration: none;
+      }
+
+      .footer-logos i {
+        text-align: center;
+        color: #777777;
+        margin: 0 0 1em 1em;
+        padding-top: .25em;
+        border: 1px solid rgba(100, 100, 100, .3);
+        border-radius: 25%;
+        vertical-align: -1.5em;
+      }
+
+      .footer-logos .genericon {
+        width: 1.6em;
+        height: 1.6em;
+      }
+
+      .footer-logos .fa {
+        width: 1.75em;
+        height: 1.75em;
+      }
+
+      .footer .container-fluid {
+        max-width: 480px;
+      }
+    </style>
+  </head>
+  <body translate="no" >
+    <!--
+    ****       ***         ***       ***         ***        ****
+    *  Copyright (C) 2016 Tyler Moeller. All rights reserved.  *
+    *  All trademarks, product names, and logos on this site   *
+    *  are the property of their respective owners.            *
+    ****       ***         ***       ***         ***        ****
+
+    Assignment Details:
+      - Developed for the freeCodeCamp front end challenge: Build a JavaScript Calculator
+      - Details: http://www.freecodecamp.com/challenges/build-a-javascript-calculator
+
+    Requirements for this assignment:
+      - Reverse engineer this without looking at the code: http://codepen.io/GeoffStorbeck/full/zxgaqw
+      - Users can add, subtract, multiply, and divide two numbers.
+      - Bonus: Users can clear the input field with a clear button.
+      - Bonus: Users can chain mathematical operations together and get the correct output
+
+    Assignment Completed. v1.0 10/17/2015:
+      - Mobile-friendly design using JavaScript, jQuery, jQuery Mobile, HTML5, CSS3 gradient transitions, and Bootstrap + Font-awesome CSS libraries.
+      - Successfully reverse engineered http://codepen.io/GeoffStorbeck/full/zxgaqw without looking at the code. (and improved on the design!)
+      - Users are able to:
+          - Clear all input or the most recent entry.
+          - Add, subtract, multiply, and divide two numbers.
+          - Chain mathematical operations together and get the correct output.
+          - Calculate percentage as intended on a calculator (10 + 8% = 10.8)
+          - Perform negative/positive operations on entries and answers.
+      - CSS/HTML effects for turning the calculator on and off
+      - All answers formatted to fit on screen with no more than 10 digits (12 chars with decimal and negative)
+     -->
+
+    <div class="headroom"></div>
+    <div class="container calculator">
+      <div class="row text-center logo">
+        <p class="brand">Tyler Calcutronics&trade;</p>
+        <p class="model">
+          <span class="fa-stack fa-sm">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-calculator fa-stack-1x fa-inverse"></i>
+          </span> TC-1000</p>
+      </div>
+      <div class="row text-center">
+        <i id="battery" class="fa fa-battery-4 fa-stack-1x" style="visibility: hidden"></i>
+        <input id="input-window" disabled />
+        <div>
+          <button id="power" class="aluminum square" onclick="powerButton()"><i id="power-btn" class="fa fa-md fa-power-off"></i></button>
+          <button id="clear" class="aluminum square" onclick="clearButton()">C</button>
+          <button id="%" class="aluminum square" onclick="percent()">%</button>
+          <button id="/" class="aluminum square" onclick="operate('/')">&divide;</button>
+        </div>
+        <div>
+          <button id="7" class="aluminum round number">7</button>
+          <button id="8" class="aluminum round number">8</button>
+          <button id="9" class="aluminum round number">9</button>
+          <button id="*" class="aluminum square" onclick="operate('*')">&times;</button>
+        </div>
+        <div>
+          <button id="4" class="aluminum round number">4</button>
+          <button id="5" class="aluminum round number">5</button>
+          <button id="6" class="aluminum round number">6</button>
+          <button id="-" class="aluminum square" onclick="operate('-')">-</button>
+        </div>
+        <div>
+          <button id="1" class="aluminum round number">1</button>
+          <button id="2" class="aluminum round number">2</button>
+          <button id="3" class="aluminum round number">3</button>
+          <button id="+" class="aluminum square" onclick="operate('+')">+</button>
+        </div>
+        <div>
+          <button id="0" class="aluminum round number">0</button>
+          <button id="." class="aluminum round" onclick="decimal()">.</button>
+          <button id="-1" class="aluminum round" onclick="plusmin()">+/-</button>
+          <button id="=" class="aluminum square" onclick="equals()">=</button>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container-fluid text-center">
+        <div class="footer-text text-muted row">Copyright &copy; <script>document.write(new Date().getFullYear());</script> Tyler Moeller. All rights reserved. Developed for the freeCodeCamp Front-end Development Challenge: <a href="http://www.freecodecamp.com/challenges/build-a-javascript-calculator" target="_blank">Build a JavaScript Calculator</a></div>
+        <div class="footer-logos row">
+          <a href="https://twitter.com/Tyler_Moeller" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/tylermoeller" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a href="https://github.com/TylerMoeller" target="_blank"><i class="fa fa-github"></i></a>
+          <a href="https://www.freecodecamp.org/tylermoeller" target="_blank"><i class="fa fa-fire"></i></a>
+          <a href="https://codepen.io/TylerMoeller" target="_blank"><i class="fa fa-codepen"></i></a>
+          <a href="http://tylermoeller.net" target="_blank"><i class="fa fa-wordpress"></i></a>
+        </div>
+      </div>
+    </footer>
+    <div id="formula" style="display: none"></div>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script>
+    var drainage; // battery drain timer
+
+    function init() {
+      turnCalcOff();
+      $.mobile.loading().hide();
+      $(document).keyup(turnCalcOn);
+
+      // Number Buttons. Using jQuery Mobile onTap for better mobile experience.
+      // Eliminates 300ms click->tap conversion.
+      $('button.number').on('tap', enterNumber);
+    }
+
+    // Power Button logic
+    function powerButton() {
+      fBtnPressed = false;
+      ($('#power-btn').css('color') === 'rgb(0, 0, 0)') ? turnCalcOn() : turnCalcOff();
+    }
+
+    function turnCalcOn() {
+      clearAll();
+      power = true;
+      $('#input-window').css('background-color', 'turquoise');
+      $('#battery').css('visibility', 'visible');
+      $('#power-btn').css('color', 'rgb(0,102,204)');
+
+      // Drain the battery by 25% every 8 seconds.
+      var count = 5;
+      drainage = setInterval(() => {
+        count--;
+        $('#battery').addClass('fa fa-battery-' + count + ' fa-stack-1x');
+        if (count === 0) count = 5;
+      }, 5000);
+    }
+
+    function turnCalcOff() {
+      clearInterval(drainage);
+      clearAll();
+      power = false;
+      $('#input-window').css('background-color', 'lightgray');
+      $('#battery').css('visibility', 'hidden');
+      $('#power-btn').css('color', 'black');
+    }
+
+    // [C] / [AC] button logic to clear the calculator
+    function clearButton() {
+      fBtnPressed = false;
+      if ($('#input-window').val() !== '' &&
+        $('#clear').text() === 'C') {
+        $('#clear').text('AC');
+        clearEntry();
+      } else {
+        clearAll();
+      }
+    }
+
+    function clearEntry() {
+      $('#input-window').val('');
+    }
+
+    function clearAll() {
+      $('#clear').text('C');
+      $('#input-window').val('');
+      $('#formula').text('');
+    }
+
+    // Manage state when clicking on the round buttons:
+    // Turn calc on if needed, don't allow repeat presses of function buttons, and
+    // clear the display if the equals button was pressed prior to clicking on a round button.
+    function prerequisites() {
+      fBtnPressed = false;
+      if (power === false) turnCalcOn();
+      if (clear === true) {
+        clear = false;
+        clearEntry();
+        $('#clear').text('C');
+      }
+    }
+
+    function enterNumber() {
+      prerequisites();
+
+      // Add a decimal if the user tries to enter two leading zeroes
+      if ($('#input-window').val() === '0') {
+        $('#input-window').val('0.');
+        return;
+      }
+
+      // If we have fewer than 10 digits, enter the number
+      var input = $('#input-window').val();
+      if (((input.indexOf('.') && (input.indexOf('-')) < 0) && input.length < 10) ||
+        (((input.indexOf('.') && input.indexOf('-')) > 0) && input.length < 12) ||
+        (((input.indexOf('.') || input.indexOf('-')) > -1) && input.length < 11)) {
+        $('#input-window').val($('#input-window').val() + this.id);
+      }
+    }
+
+    // Decimal Button. Allow only one, not at the end, and prepend a 0
+    // if entered before other numbers.
+    function decimal() {
+      prerequisites();
+      var val = $('#input-window').val();
+      if (val.toString().length >= 10) return;
+      if (!val) $('#input-window').val('0');
+      if (val.indexOf('.') < 0) $('#input-window').val($('#input-window').val() + '.');
+    }
+
+    // Make negative or positive when +/- button is pressed by multiplying by -1
+    function plusmin() {
+      if ($('#input-window').val() === '') return; //nothing to calculate
+      result = eval($('#input-window').val() + '*-1');
+      formatNumber(result);
+    }
+
+    // get the previously entered value (A) * (current value (B) / 100)
+    // http://blogs.msdn.com/b/oldnewthing/archive/2008/01/10/7047497.aspx
+    function percent() {
+      //nothing to calculate
+      if ($('#formula').text() === '') return;
+
+      if (fBtnPressed === true) {
+        return;
+      } else {
+        fBtnPressed = true;
+        clear = true;
+        var A = $('#formula').html().match(/((\d|\.)+)(?!.*\d)/);
+        var B = $('#input-window').val();
+        var result = eval(A[0] * (B / 100));
+        formatNumber(result);
+      }
+    }
+
+    // Multiply, divide, add, or subtract and update formula in the #formula div.
+    function operate(operator) {
+      if ($('#input-window').val() === '') return; //nothing to calculate
+
+      // If the user just pressed an operator button, replace the operator
+      // in the formula string. Otherwise, update the input window with current
+      // result and add the operator to the formula string
+      if (fBtnPressed === true) {
+        var formula = $('#formula').html().replace(/(\+|\-|\*|\/)$/, operator);
+        $('#formula').html(formula);
+      } else {
+        fBtnPressed = true;
+        clear = true;
+        $('#formula').text($('#formula').text() + $('#input-window').val());
+        result = eval($('#formula').text());
+        formatNumber(result);
+        $('#formula').html($('#formula').text() + operator);
+      }
+    }
+
+    // Prepare the hidden div formula for eval() and send
+    // results to be formatted and displayed
+    function equals() {
+      fBtnPressed = false;
+
+      //nothing to calculate
+      if ($('#input-window').val() === '') return;
+
+      // Eval doesn't like, for example, 5 minus negative 4 (5--4).
+      // Format as (5-4*-1) instead.
+      var input = $('#input-window').val();
+      if (input < 0) {
+        $('#formula').text($('#formula').text() + '(' + (-1 * input) + '*-1)');
+      } else {
+        $('#formula').html($('#formula').text() + $('#input-window').val());
+      }
+
+      var result = eval($('#formula').text());
+      clear = true;
+      $('#formula').text('');
+      formatNumber(result);
+    }
+
+    // Format number to fit on-screen
+    function formatNumber(result) {
+      result = result.toString();
+
+      // eval() will return an exponential if > 21 digits.
+      // Make it an 11 char exponential to fit on-screen
+      if (result.indexOf('e') > -1) {
+        var split = result.split('e');
+        var num = Number(split[0]).toFixed(5);
+        result = num + 'e' + split[1];
+        update(result);
+      }
+
+      // Do nothing if number will fit on screen (12 char max with "-" and ".")
+      if ((result.length <= 12 && (result.indexOf('.') > -1 && result.indexOf('-') > -1)) ||
+         (result.length <= 11 && (result.indexOf('.') > -1 || result.indexOf('-') > -1)) ||
+         (result.length <= 10)) {
+        update(result);
+
+        // Convert number to exponential if it's More than 10 digits
+        // and has no decimal or a decimal after the 10th digit
+      } else if ((result.length > 10 && (result.indexOf('-') < 0) &&
+                (result.indexOf('.') < 0 || result.indexOf('.') > 9)) ||
+                (result.length > 11 && (result.indexOf('-') > -1) &&
+                (result.indexOf('.') < 0 || result.indexOf('.') > 10))) {
+        result = Number(result).toExponential(5);
+        update(result);
+
+        // At this point we have a positive or negative decimal, run toFixed() to the max length.
+      } else if (result.indexOf('-') > -1) {
+        result = Number(result).toFixed(11 - result.indexOf('.'));
+        update(result);
+      } else if (result.indexOf('-') < 0) {
+        result = Number(result).toFixed(10 - result.indexOf('.'));
+        update(result);
+      }
+    }
+
+    function update(result) {
+      // trim trailing zeros after the decimal.
+      // If left with a trailing decimal, trim that too.
+      if (result.indexOf('.') > -1 && result.indexOf('e') < 0) {
+        result = result.replace(/0+$/, '');
+        if (result.charAt(result.length - 1) === '.') {
+          result = result.replace('.', '');
+        }
+      }
+
+      $('#input-window').val(result);
+    }
+
+    $(document).ready(init);
+    </script>
+  </body>
+</html>

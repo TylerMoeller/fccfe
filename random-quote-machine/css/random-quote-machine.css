@@ -1,0 +1,89 @@
+body {
+  background-image: url(//tylermoeller.github.io/random-quote-machine/img/wenge.jpg);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 768px;
+  min-width: 270px;
+}
+
+.title {
+  margin-top: 5%;
+}
+
+@media (max-width: 600px) {
+  .title {
+    margin-top: .5em;
+  }
+}
+
+.main-content {
+  font-size: 1.6em;
+  min-height: 14em;
+}
+
+.spinner {
+  margin: 2em auto;
+}
+
+.authorWiki,
+.shareQuote {
+  border-radius: 12.5%;
+  font-size: .6em;
+  height: 3em;
+  margin-top: 1em;
+}
+
+.authorWiki:hover,
+.shareQuote:hover {
+  opacity: .8;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.new-quote-btn, .new-quote-btn:hover {
+  border: 1px solid #bdbdbd;
+  box-shadow: 0 5px 0 #bdbdbd;
+  font-weight: 500;
+  margin-bottom: 5em;
+  padding: 0 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+.new-quote-btn:active,
+.new-quote-btn:focus {
+  border-style: none;
+  box-shadow: 0 0 0 1px #bdbdbd inset,
+              0 0 0 1px rgba(255, 255, 255, 0.15) inset,
+              0 1px 3px 1px rgba(0, 0, 0, .1);
+  position: relative;
+  top: 4px;
+}
+
+/* footer formatting */
+main {
+  flex: 1 0 auto;
+}
+
+.footer-text {
+  font-size: 1em;
+  margin: 0;
+}
+
+.footer-logos i {
+  border: 1px solid #646464;
+  border: 1px solid rgba(100, 100, 100, .3);
+  border-radius: 25%;
+  color: #646464;
+  font-size: 1.1em;
+  margin-right: .25em;
+  padding: .4em;
+}

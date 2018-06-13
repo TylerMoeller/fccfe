@@ -1,0 +1,41 @@
+html
+  min-height: 100%
+  position: relative
+  min-width: 300px
+  max-width: 1280px
+  margin: 0 auto
+
+body, textarea
+  font-family: 'Roboto', sans-serif
+
+#mdInput, #mdViewer
+  float: left
+  width: 48%
+  @media screen and (max-width: 768px)
+    width: 100%
+
+#mdInput
+  resize: none
+  margin-top: 1%
+  white-space: pre
+  @media screen and (max-width: 768px)
+    height: 50vh
+    resize: vertical
+
+#mdViewer
+  margin-bottom: 5%
+  background-color: white
+  @media screen and (min-width: 768px)
+    margin-left: 3%
+
+#mdViewer img
+  width: 100%
+
+/* inline code comments */
+code
+  background-color: #F0F0F0
+
+#mdViewer .fa
+  color: #222222
+  font-size: 1.5em
+  margin: .25em .45em 0 0

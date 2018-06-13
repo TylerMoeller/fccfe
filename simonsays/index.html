@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simon Says - by Tyler Moeller</title>
+    <meta charset="UTF-8">
+    <meta name="google" value="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="prefetch" href="audio/simonSound1.mp3">
+    <link rel="prefetch" href="audio/simonSound2.mp3">
+    <link rel="prefetch" href="audio/simonSound3.mp3">
+    <link rel="prefetch" href="audio/simonSound4.mp3">
+    <link rel="stylesheet prefetch" href="css/bootstrap.min.css">
+    <link rel="stylesheet prefetch" href="css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="css/simon.css">
+  </head>
+  <body>
+<!--
+  ****       ***         ***       ***         ***        ****
+  *  Copyright (C) 2016 Tyler Moeller. All rights reserved.  *
+  *  All trademarks, product names, and logos on this site   *
+  *  are the property of their respective owners.            *
+  ****       ***         ***       ***         ***        ****
+
+  Assignment Details:
+    - Developed for the freeCodeCamp advanced front-end development project: Build a Simon Game
+    - Details: https://www.freecodecamp.com/challenges/build-a-simon-game
+
+  Requirements for this assignment:
+   - Objective: Build a CodePen.io app that is functionally similar to this: http://codepen.io/FreeCodeCamp/full/obYBjE.
+   - Rule #1: Don't look at the example project's code. Figure it out for yourself.
+   - Rule #2: Fulfill the below user stories. Use whichever libraries or APIs you need. Give it your own personal style.
+   - User Story: I am presented with a random series of button presses.
+   - User Story: Each time I input a series of button presses correctly, I see the same series of button presses but with an additional step.
+   - User Story: I hear a sound that corresponds to each button both when the series of button presses plays, and when I personally press a button.
+   - User Story: If I press the wrong button, I am notified that I have done so, and that series of button presses starts again to remind me of the pattern so I can try again.
+   - User Story: I can see how many steps are in the current series of button presses.
+   - User Story: If I want to restart, I can hit a button to do so, and the game will return to a single step.
+   - User Story: I can play in strict mode where if I get a button press wrong, it notifies me that I have done so, and the game restarts at a new random series of button presses.
+   - User Story: I can win the game by getting a series of 20 steps correct. I am notified of my victory, then the game starts over.
+
+  Assignment Completed. v1.0 03/17/2016:
+    - Responsive deisgn using JavaScript, jQuery, HTML5, and Bootstrap + Font Awesome CSS libraries.
+    - Mobile view, giving better touch-enabled access to game controls.
+    - All required user stories fulfilled.
+    - Due to performance issues with remotely-hosted .mp3 files, this app has been deployed to a location
+      where resources can be loaded within the same origin: https://tylermoeller.github.io/simonsays
+
+  To Do:
+    - Code review
+    - Cancel all animation queues and completely turn off Simon when power is switched off. Power switch is ignored if hit during animation.
+    - Investigate .mp3 file caching on mobile. Can't play on mobile because of .mp3 file transfer delays.
+ -->
+<audio id="greenSound" preload="auto" src="audio/simonSound1.mp3" type="audio/mpeg"></audio>
+<audio id="redSound" preload="auto" src="audio/simonSound2.mp3" type="audio/mpeg"></audio>
+<audio id="yellowSound" preload="auto" src="audio/simonSound3.mp3" type="audio/mpeg"></audio>
+<audio id="blueSound" preload="auto" src="audio/simonSound4.mp3" type="audio/mpeg"></audio>
+<div class="container main">
+	<div class="gameboard">
+		<div class="color-buttons">
+			<div class="top">
+				<span class="color-button" id="green"></span>
+				<span class="color-button" id="red"></span>
+			</div>
+			<div class="bottom">
+				<span class="color-button" id="yellow"></span>
+				<span class="color-button" id="blue"></span>
+			</div>
+		</div>
+		<div class="center">
+			<p class="title">simon<sup class="trademark">&reg;</sup></p>
+			<div class="mobile-wrapper row">
+				<div class="center-controls">
+					<div class="score-display">
+						<p class="score">--</p>
+						<p class="control-label">Score</p>
+					</div>
+					<div class="btn-control text-center">
+						<div class="btn-game btn-start" id="start"></div>
+						<p class="control-label">Start</p>
+					</div>
+					<div class="btn-control text-center">
+						<div class="btn-game btn-strict" id="strict"></div>
+						<p class="control-label strict-label">Strict</p>
+					</div>
+				</div>
+				<div class="power">
+					<p class="control-label">OFF</p>
+					<div class="power-toggle-box text-left">
+						<div class="power-toggle"></div>
+					</div>
+					<p class="control-label">On</p>
+					<div class="warning text-center"><p>Sorry...Simon doesn't work reliably on mobile yet.</p></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<footer class="footer">
+	<div class="container-fluid text-center">
+		<div class="footer-text text-muted row">Copyright &copy;
+			<script>
+				document.write(new Date().getFullYear());
+			</script> Tyler Moeller. All rights reserved. Developed for the freeCodeCamp Front-end Development Challenge: <a href="https://www.freecodecamp.com/challenges/build-a-simon-game" target="_blank">Build a Simon Game</a>.</div>
+		<div class="footer-logos row">
+			<a href="https://twitter.com/Tyler_Moeller" target="_blank"><i class="fa fa-twitter"></i></a>
+			<a href="https://www.linkedin.com/in/tylermoeller" target="_blank"><i class="fa fa-linkedin"></i></a>
+			<a href="https://github.com/TylerMoeller" target="_blank"><i class="fa fa-github"></i></a>
+			<a href="https://freecodecamp.com/tylermoeller" target="_blank"><i class="fa fa-fire"></i></a>
+			<a href="https://codepen.io/TylerMoeller/pens/public" target="_blank"><i class="fa fa-codepen"></i></a>
+			<a href="http://tylermoeller.net" target="_blank"><i class="fa fa-wordpress"></i></a>
+		</div>
+	</div>
+</footer>
+  <script src="js/jquery-2.2.1.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/simon.js"></script>
+  </body>
+</html>

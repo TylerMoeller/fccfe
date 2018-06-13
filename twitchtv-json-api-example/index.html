@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <meta name="google" value="notranslate">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="website">
+    <title>Twitch.tv JSON API Example by Tyler Moeller</title>
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet prefetch" href="https://tylermoeller.github.io/twitchtv-json-api-example/twitch.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="top" class="container">
+      <header>
+        <div class="row center">
+          <img class="site-logo" src="https://tylermoeller.github.io/twitchtv-json-api-example/Twitch_BlackLogo.png">
+        </div>
+        <p class="flow-text center">Twitch.tv API example to get information for specific channels</p>
+      </header>
+    </div>
+    <main class="container home-content">
+      <section id="search-controls">
+      <div class="row">
+        <div class="col s3 offset-s1 right-align">
+          <a class="dropdown-button btn deep-purple left-align" href="#" data-activates="filter-menu" data-constrainwidth="false">
+            <i class="material-icons">filter_list</i></a>
+          <ul id="filter-menu" class="dropdown-content">
+            <li id="filter-all" class="filter status-filter-all">
+              <a href="#!" class="black-text"><i class="material-icons left">group</i>All</a>
+            </li>
+            <li id="filter-online" class="filter status-filter-online">
+              <a href="#!" class="deep-purple-text"><i class="material-icons left">person</i>Online</a>
+            </li>
+            <li id="filter-offline" class="filter status-filter-offline">
+              <a href="#!" class="grey-text text-darken-2"><i class="material-icons left">person_outline</i>Offline</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col s6 left-align">
+          <div class="input-field">
+            <input id="search-input" type="text" class="deep-purple-text" value="Search these results...">
+          </div>
+        </div>
+      </div>
+      </section>
+      <div id="user-list" class="row">
+        <div id="online"></div>
+        <div id="offline"></div>
+        <div id="closed"></div>
+      </div>
+      <div class="row center-align back-to-top">
+        <a href="#top" class="btn-floating btn-large waves-effect waves-light deep-purple">
+          <i class="material-icons">keyboard_arrow_up</i>
+        </a>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container center-align">
+        <div class="footer-text row">
+          <p>Copyright &copy; <script>document.write(new Date().getFullYear());</script> Tyler Moeller. All rights reserved. Developed for the freeCodeCamp Front-end Development Challenge: <a href="http://freecodecamp.com/challenges/zipline-use-the-twitchtv-json-api" target="_blank">Use the Twitch.tv JSON API</a></p>
+        </div>
+        <div class="footer-logos row">
+          <a href="https://twitter.com/Tyler_Moeller" target="_blank"><i class="fa fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/tylermoeller" target="_blank"><i class="fa fa-linkedin"></i></a>
+          <a href="https://github.com/TylerMoeller" target="_blank"><i class="fa fa-github"></i></a>
+          <a href="https://www.freecodecamp.org/tylermoeller" target="_blank"><i class="fa fa-fire"></i></a>
+          <a href="https://codepen.io/TylerMoeller" target="_blank"><i class="fa fa-codepen"></i></a>
+          <a href="http://tylermoeller.net" target="_blank"><i class="fa fa-wordpress"></i></a>
+        </div>
+      </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="https://tylermoeller.github.io/twitchtv-json-api-example/twitch.js"></script>
+  </body>
+</html>
