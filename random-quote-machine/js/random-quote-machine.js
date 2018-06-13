@@ -1,28 +1,23 @@
-/* jshint esversion: 6 */
-
 function hideData() {
-  $('#quote-actions').hide();
+  $('#quote-actions, #quote-text').hide();
   $('#spinner').show();
-  $('#quote-text').hide();
 }
 
 function showData() {
+  $('#quote-text, #quote-actions').show();
   $('#spinner').hide();
-  $('#quote-text').show();
-  $('#quote-actions').show();
 }
 
 function quoteHandler(data) {
   const quoteText = data.quoteText.trim(),
-        quoteAuthor = '~' + (data.quoteAuthor.trim() || 'Anonymous'),
-        quoteMachineUrl = 'http://s.codepen.io/TylerMoeller/debug/WQGjvO',
-        tweetText = encodeURIComponent(quoteText + ' ' + quoteAuthor + ' ' + quoteMachineUrl),
-        tweetUrl = 'https://\ttwitter.com/intent/tweet?text=' + tweetText, // '\t' bypasses adblock
-        wikiUrl = 'https://en.wikipedia.org/wiki/' + data.quoteAuthor.trim().replace(/\s/g, '_');
+    quoteAuthor = `~${  data.quoteAuthor.trim() || 'Anonymous'}`,
+    quoteMachineUrl = 'https://tylermoeller.github.io/fccfe/random-quote-machine/',
+    tweetText = encodeURIComponent(`${quoteText  } ${  quoteAuthor  } ${  quoteMachineUrl}`),
+    tweetUrl = `https://\ttwitter.com/intent/tweet?text=${  tweetText}`, // '\t' bypasses adblock
+    wikiUrl = `https://en.wikipedia.org/wiki/${  data.quoteAuthor.trim().replace(/\s/g, '_')}`;
 
-  // Only accept quotes that can be tweeted in 140 chars or less.
-  // Tweet length is 163. 140 character text limit + 23-character twitter-shortened URL = 163.
-  if (tweetText.length > 163) {
+  // 280 character text limit + 23-character twitter-shortened URL = 303.
+  if (tweetText.length > 303) {
     getQuote();
     return;
   }
@@ -40,15 +35,7 @@ function quoteHandler(data) {
 
 function error(err) {
   $('#author').html('~ Random Quote Machine');
-
-  if (err === 'https') {
-    $('#quote').html('The Forismatic Quotes API does not support HTTPS. ' +
-                     'Please open this page over HTTP instead.');
-  } else {
-    $('#quote').html('Error: ' + err.status + ' (' + err.statusText + '). ' +
-                     'Please try again later.');
-  }
-
+  $('#quote').html(`Error: ${  err.status  } (${  err.statusText  }). ` + `Please try again later.`);
   showData();
 }
 
@@ -56,16 +43,11 @@ function error(err) {
 function getQuote() {
   hideData();
 
-  if (window.location.protocol !== 'http:') {
-    error('https');
-    return;
-  }
-
-  $.getJSON('http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?')
+  $.getJSON('https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=?')
     .done(quoteHandler)
     .fail(error);
 
   $('.new-quote-btn').blur();
 }
 
-$(document).ready(getQuote);
+$(getQuote);
