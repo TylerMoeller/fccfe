@@ -11,7 +11,7 @@ var cities = [];
 
 // Get the weather from the Weather Underground API
 function getWeather(weatherStation) {
-  var backgroundImgUrl = 'https://tylermoeller.github.io/local-weather-app/assets/img/',
+  var backgroundImgUrl = 'https://tylermoeller.github.io/fccfe/local-weather-app/assets/img/',
       apiBaseUrl = 'https://api.wunderground.com/api/d2e6b90fe3579205/conditions';
 
   // Build the appropriate URL if a specific city's weather station was requested.

@@ -10,7 +10,7 @@ marked.setOptions({
 });
 
 // Viewer for converted markdown
-let MDView = React.createClass({
+const MDView = React.createClass({
   displayName: 'MDView',
 
   render: function render() {
@@ -22,11 +22,11 @@ let MDView = React.createClass({
 });
 
 // <textarea> input for text to be converted to markdown
-let MDInput = React.createClass({
+const MDInput = React.createClass({
   displayName: 'MDInput',
 
   getInitialState: function getInitialState() {
-    let defaultText = '# Markdown Previewer!' + '\n\n### Pictures: ' + '\n\n![alt text](https://tylermoeller.github.io/React-Markdown-Previewer/fcc.png)' + '\n\n### Headings:\n# H1\n## H2\n### H3\netc...\n###### H6' + '\n\n### Code blocks:' + '\n```javascript\nfunction hello() {\n  console.log(\'Hello!\');\n}\n\nhello();\n```' + '\n\n### Text Decoration:\n' + '*italic*, \n**bold**, \n~~strikethrough~~, \n`inline code or monospace text`' + '\n\n### Unordered lists:\n* item 1\n* item 2\n* item 3' + '\n\n### Ordered lists:\n1. item 1\n2. item 2\n3. item 3' + '\n\n### Hyperlinks: ' + '\n\n*[HyperLink](https://#)*' + '\n\n##### Most markdown engines also allow HTML:\n\n' + '<a href="https://freecodecamp.com/TylerMoeller" target="blank">Developed by Tyler Moeller</a><br>' + '\n<a href="https://twitter.com/Tyler_Moeller" target="_blank"><i class="fa fa-twitter footer"></i></a>' + '\n<a href="https://www.linkedin.com/in/tylermoeller" target="_blank"><i class="fa fa-linkedin footer"></i></a>' + '\n<a href="https://github.com/TylerMoeller" target="_blank"><i class="fa fa-github footer"></i></a>' + '\n<a href="https://www.freecodecamp.org/tylermoeller" target="_blank"><i class="fa fa-fire footer"></i></a>' + '\n<a href="https://codepen.io/TylerMoeller" target="_blank"><i class="fa fa-codepen footer"></i></a>' + '\n<a href="http://tylermoeller.net" target="_blank"><i class="fa fa-wordpress footer"></i></a>';
+    const defaultText = '# Markdown Previewer!' + '\n\n### Pictures: ' + '\n\n![alt text](https://tylermoeller.github.io/fccfe/React-Markdown-Previewer/fcc.png)' + '\n\n### Headings:\n# H1\n## H2\n### H3\netc...\n###### H6' + '\n\n### Code blocks:' + '\n```javascript\nfunction hello() {\n  console.log(\'Hello!\');\n}\n\nhello();\n```' + '\n\n### Text Decoration:\n' + '*italic*, \n**bold**, \n~~strikethrough~~, \n`inline code or monospace text`' + '\n\n### Unordered lists:\n* item 1\n* item 2\n* item 3' + '\n\n### Ordered lists:\n1. item 1\n2. item 2\n3. item 3' + '\n\n### Hyperlinks: ' + '\n\n*[HyperLink](https://#)*' + '\n\n##### Most markdown engines also allow HTML:\n\n' + '<a href="https://freecodecamp.com/TylerMoeller" target="blank">Developed by Tyler Moeller</a><br>' + '\n<a href="https://twitter.com/Tyler_Moeller" target="_blank"><i class="fa fa-twitter footer"></i></a>' + '\n<a href="https://www.linkedin.com/in/tylermoeller" target="_blank"><i class="fa fa-linkedin footer"></i></a>' + '\n<a href="https://github.com/TylerMoeller" target="_blank"><i class="fa fa-github footer"></i></a>' + '\n<a href="https://www.freecodecamp.org/tylermoeller" target="_blank"><i class="fa fa-fire footer"></i></a>' + '\n<a href="https://codepen.io/TylerMoeller" target="_blank"><i class="fa fa-codepen footer"></i></a>' + '\n<a href="http://tylermoeller.net" target="_blank"><i class="fa fa-wordpress footer"></i></a>';
 
     return {
       value: defaultText,
@@ -42,7 +42,7 @@ let MDInput = React.createClass({
   // Update the markdown preview whenever textarea changes
   // Adjust the height of the element if needed
   handleChange: function handleChange(event) {
-    let textAreaHeight = document.getElementById('mdInput').value.split('\n').length;
+    const textAreaHeight = document.getElementById('mdInput').value.split('\n').length;
     this.setState({ height: textAreaHeight });
     this.setState({ value: event.target.value });
     ReactDOM.render(React.createElement(MDView, null), document.getElementById('previewer'));

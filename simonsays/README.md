@@ -1,9 +1,9 @@
 # simonsays
 :space_invader::video_game: Simon Says - A freeCodeCamp Front-End Development Project.
 
-https://tylermoeller.github.io/simonsays/
+https://tylermoeller.github.io/fccfe/simonsays/
 
-<img src="https://tylermoeller.github.io/simonsays/img/screenshot.jpg">
+<img src="https://tylermoeller.github.io/fccfe/simonsays/img/screenshot.jpg">
 
 
 #License

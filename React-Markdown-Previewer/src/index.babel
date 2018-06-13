@@ -27,7 +27,7 @@ var MDInput = React.createClass({
     var defaultText =
         '# Markdown Previewer!' +
         '\n\n### Pictures: ' +
-        '\n\n![alt text](https://tylermoeller.github.io/React-MarkDown-Previewer/fcc.png)' +
+        '\n\n![alt text](https://tylermoeller.github.io/fccfe/React-MarkDown-Previewer/fcc.png)' +
         '\n\n### Headings:\n# H1\n## H2\n### H3\netc...\n###### H6' +
         '\n\n### Code blocks:' +
         '\n```javascript\nfunction hello() {\n  console.log(\'Hello!\');\n}\n\nhello();\n```' +

@@ -1,9 +1,9 @@
 #Pomodoro Timer
 :tomato: :alarm_clock: :clipboard: Javascript Pomodoro Timer - for tracking your pomodoro sessions!
 
-https://tylermoeller.github.io/pomodoro-timer/
+https://tylermoeller.github.io/fccfe/pomodoro-timer/
 
-![](https://tylermoeller.github.io/pomodoro-timer/screenshot.png)
+![](https://tylermoeller.github.io/fccfe/pomodoro-timer/screenshot.png)
 
 #License
 The MIT License (MIT)

@@ -2,9 +2,9 @@
 
 :sunny::umbrella::cloud::snowflake: Local weather conditions. A Web Page built with Javascript, Bootstrap, and Font Awesome. All weather is from the OpenWeatherMap API.
 
-https://tylermoeller.github.io/local-weather-app
+https://tylermoeller.github.io/fccfe/local-weather-app
 
-![](https://tylermoeller.github.io/local-weather-app/assets/img/screenshot.jpg)
+![](https://tylermoeller.github.io/fccfe/local-weather-app/assets/img/screenshot.jpg)
 
 #License
 The MIT License (MIT)

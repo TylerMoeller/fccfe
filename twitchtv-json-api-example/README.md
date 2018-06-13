@@ -1,9 +1,9 @@
 # twitchtv-json-api-example  
 
-https://tylermoeller.github.io/twitchtv-json-api-example
+https://tylermoeller.github.io/fccfe/twitchtv-json-api-example
 
 
-<img src="https://tylermoeller.github.io/twitchtv-json-api-example/screenshot.jpg">
+<img src="https://tylermoeller.github.io/fccfe/twitchtv-json-api-example/screenshot.jpg">
 
 
 

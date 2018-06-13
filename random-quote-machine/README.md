@@ -1,9 +1,9 @@
 #Random Quote Machine
 :thought_balloon: :1234: Web page that provides random quotes from the Forismatic API.
 
-http://tylermoeller.github.io/random-quote-machine
+http://tylermoeller.github.io/fccfe/random-quote-machine
 
-<img src="https://tylermoeller.github.io/random-quote-machine/img/screenshot.jpg">
+<img src="https://tylermoeller.github.io/fccfe/random-quote-machine/img/screenshot.jpg">
 
 
 #License

@@ -1,8 +1,8 @@
 #Simple JavaScript Calculator  
 
-https://tylermoeller.github.io/js-calculator
+https://tylermoeller.github.io/fccfe/js-calculator
 
-![](https://tylermoeller.github.io/js-calculator/assets/img/screenshot.png)
+![](https://tylermoeller.github.io/fccfe/js-calculator/assets/img/screenshot.png)
 
 
 #License  

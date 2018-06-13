@@ -1,11 +1,11 @@
 # tic-tac-toe
 
-https://tylermoeller.github.io/tic-tac-toe/
+https://tylermoeller.github.io/fccfe/tic-tac-toe/
 
 Developed for the freeCodeCamp Front-end Development Challenge: <a href="http://www.freecodecamp.com/challenges/build-a-tic-tac-toe-game">Build a Tic Tac Toe Game</a>.
 
 
-<img src="https://tylermoeller.github.io/tic-tac-toe/assets/img/screenshot.jpg">
+<img src="https://tylermoeller.github.io/fccfe/tic-tac-toe/assets/img/screenshot.jpg">
 
 
 #License

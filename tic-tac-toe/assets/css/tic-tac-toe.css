@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'chalk';
-  src: url('https://tylermoeller.github.io/tic-tac-toe/assets/font/eraserdust-webfont.eot'),
-       url('https://tylermoeller.github.io/tic-tac-toe/assets/font/eraserdust-webfont.eot?#iefix') format('embedded-opentype'),
-       url('https://tylermoeller.github.io/tic-tac-toe/assets/font/eraserdust-webfont.woff2') format('woff2'),
-       url('https://tylermoeller.github.io/tic-tac-toe/assets/font/eraserdust-webfont.woff') format('woff'),
-       url('https://tylermoeller.github.io/tic-tac-toe/assets/font/eraserdust-webfont.ttf') format('truetype'),
-       url('https://tylermoeller.github.io/tic-tac-toe/assets/font/eraserdust-webfont.svg#eraserdust') format('svg');
+  src: url('https://tylermoeller.github.io/fccfe/tic-tac-toe/assets/font/eraserdust-webfont.eot'),
+       url('https://tylermoeller.github.io/fccfe/tic-tac-toe/assets/font/eraserdust-webfont.eot?#iefix') format('embedded-opentype'),
+       url('https://tylermoeller.github.io/fccfe/tic-tac-toe/assets/font/eraserdust-webfont.woff2') format('woff2'),
+       url('https://tylermoeller.github.io/fccfe/tic-tac-toe/assets/font/eraserdust-webfont.woff') format('woff'),
+       url('https://tylermoeller.github.io/fccfe/tic-tac-toe/assets/font/eraserdust-webfont.ttf') format('truetype'),
+       url('https://tylermoeller.github.io/fccfe/tic-tac-toe/assets/font/eraserdust-webfont.svg#eraserdust') format('svg');
   font-weight: bold;
 }
 
@@ -38,7 +38,7 @@ body {
 .gameboard {
   margin: 3em auto 0 auto;
   padding: 1.1em .25em .9em .25em;
-  border-image-source: url('https://tylermoeller.github.io/tic-tac-toe/assets/img/bamboo.jpg');
+  border-image-source: url('https://tylermoeller.github.io/fccfe/tic-tac-toe/assets/img/bamboo.jpg');
   border-image-slice: 25;
   border-image-width: 10px;
   max-width: 500px;
@@ -56,7 +56,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background: url('https://tylermoeller.github.io/tic-tac-toe/assets/img/chalkboard.jpg') center;
+  background: url('https://tylermoeller.github.io/fccfe/tic-tac-toe/assets/img/chalkboard.jpg') center;
   margin: 3px;
   cursor: cell;
 }
