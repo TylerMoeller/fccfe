@@ -1,13 +1,11 @@
 # twitchtv-json-api-example  
 
-https://tylermoeller.github.io/fccfe/twitchtv-json-api-example
+[https://tylermoeller.github.io/fccfe/twitchtv-json-api-example](https://tylermoeller.github.io/fccfe/twitchtv-json-api-example)
 
+![Screenshot of the Twitch.tv JSON API Example Web App](https://tylermoeller.github.io/fccfe/twitchtv-json-api-example/img/screenshot.jpg)
 
-<img src="https://tylermoeller.github.io/fccfe/twitchtv-json-api-example/screenshot.jpg">
+## License  
 
-
-
-#License  
 The MIT License (MIT)
 
 Copyright (c) 2016 Tyler Moeller

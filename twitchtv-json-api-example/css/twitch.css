@@ -1,0 +1,157 @@
+body {
+  background-color: #17141f;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1400px;
+  min-width: 280px;
+  text-align: center;
+  width: 100%;
+}
+
+.twitch-logo {
+  display: block;
+  margin: 2em auto 3em;
+  width: 200px;
+}
+
+#preloader {
+  margin-top: 100px;
+}
+
+.spinner-layer {
+  border-color: #b19dd8;
+}
+
+.btn-filter {
+  margin-top: .5em;
+  min-width: 140px;
+}
+
+#user-list {
+  margin-top: 4em;
+}
+
+.card {
+  height: 375px;
+}
+
+.twitch-card {
+  display: inline-block;
+  max-width: 400px;
+  min-width: 260px;
+  width: 100%;
+  vertical-align: top;
+}
+
+@media (min-width: 710px) {
+  .twitch-card {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+.user-logo-div {
+  background-color: #b19dd8;
+  background-size: cover;
+  background-position: top right;
+  border-bottom: 3px solid #b19dd8;
+  height: 130px;
+  margin-bottom: 5px;
+  padding: .6em 0 0;
+}
+
+.user-logo {
+  height: 150px;
+  border-radius: 50%;
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display:block;
+  left:0;
+  right:0;
+  margin: 0 auto;
+  position: absolute;
+  width: 150px;
+}
+
+img.online {
+  border: 5px solid #14a71d;
+}
+
+img.offline {
+  border: 4px solid #aaa;
+}
+
+img.closed {
+  border: 4px solid #d23636;
+}
+
+.card-content {
+  min-height: 160px;
+}
+
+.card-content p.user-name {
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-content p.user-game {
+  color: #777;
+  font-size: 1.1em;
+  text-align: center;
+}
+
+.card-content p.user-status {
+  margin-top: 1em;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card .card-action {
+  border-top: 1px solid rgba(177,157,216, .2);
+}
+
+.card-action .col {
+  border-right: 1px solid rgba(177,157,216, .7);
+  font-size: 1em;
+  text-align: center;
+}
+
+.card-action span {
+  color: #999;
+}
+
+@media (max-width:660px) {
+  .card-action .col {
+    font-size: .85em;
+  }
+}
+
+.card-action .no-border {
+  border-style: none;
+}
+
+/* footer formatting */
+.footer {
+  color: #999;
+  font-size: 14px;
+  border-top: 1px solid black;
+  width: 100%;
+  padding: 1em 1em 0 1em;
+  margin-top: 2em;
+  min-width: 280px;
+}
+
+.footer-text i {
+  color: #999;
+  text-align: center;
+  margin: 1em .5em 0;
+  border: 1px solid rgba(140, 140, 140, .4);
+  border-radius: 25%;
+  line-height: 2em;
+  width: 2em;
+  height: 2em;    
+}
